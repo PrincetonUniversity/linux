@@ -3547,12 +3547,13 @@ static void __ieee80211_rx_handle_packet(struct ieee80211_hw *hw,
 void ieee80211_rx_napi(struct ieee80211_hw *hw, struct sk_buff *skb,
 		       struct napi_struct *napi)
 {
-	printk(KERN_DEBUG "MC - rx.c: ieee80211_rx_napi\n");
-	printk(KERN_INFO "MC - rx.c: ieee80211_rx_napi\n");
 	struct ieee80211_local *local = hw_to_local(hw);
 	struct ieee80211_rate *rate = NULL;
 	struct ieee80211_supported_band *sband;
 	struct ieee80211_rx_status *status = IEEE80211_SKB_RXCB(skb);
+
+	printk(KERN_DEBUG "MC - rx.c: ieee80211_rx_napi\n");
+	printk(KERN_INFO "MC - rx.c: ieee80211_rx_napi\n");
 
 	WARN_ON_ONCE(softirq_count() == 0);
 
@@ -3660,9 +3661,10 @@ EXPORT_SYMBOL(ieee80211_rx_napi);
  * context. Post the skb on the queue and schedule the tasklet */
 void ieee80211_rx_irqsafe(struct ieee80211_hw *hw, struct sk_buff *skb)
 {
+	struct ieee80211_local *local = hw_to_local(hw);
+
 	printk(KERN_DEBUG "MC - rx.c: ieee80211_rx_irqsafe\n");
 	printk(KERN_INFO "MC - rx.c: ieee80211_rx_irqsafe\n");
-	struct ieee80211_local *local = hw_to_local(hw);
 
 	BUILD_BUG_ON(sizeof(struct ieee80211_rx_status) > sizeof(skb->cb));
 
