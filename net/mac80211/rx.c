@@ -3147,6 +3147,7 @@ static void ieee80211_rx_handlers(struct ieee80211_rx_data *rx,
 	ieee80211_rx_result res = RX_DROP_MONITOR;
 	struct sk_buff *skb;
 	printk(KERN_DEBUG "MC - rx.c: ieee80211_rx_handlers\n");
+	printk(KERN_INFO "MC - rx.c: ieee80211_rx_handlers\n");
 
 #define CALL_RXH(rxh)			\
 	do {				\
