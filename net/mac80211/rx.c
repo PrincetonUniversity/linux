@@ -3146,8 +3146,7 @@ static void ieee80211_rx_handlers(struct ieee80211_rx_data *rx,
 {
 	ieee80211_rx_result res = RX_DROP_MONITOR;
 	struct sk_buff *skb;
-	printk(KERN_DEBUG "MC - rx.c: ieee80211_rx_handlers\n");
-	printk(KERN_INFO "MC - rx.c: ieee80211_rx_handlers\n");
+	printk(KERN_ALERT "MC - rx.c: %s %d \n", __FUNCTION__, __LINE__);
 
 #define CALL_RXH(rxh)			\
 	do {				\
@@ -3552,8 +3551,7 @@ void ieee80211_rx_napi(struct ieee80211_hw *hw, struct sk_buff *skb,
 	struct ieee80211_supported_band *sband;
 	struct ieee80211_rx_status *status = IEEE80211_SKB_RXCB(skb);
 
-	printk(KERN_DEBUG "MC - rx.c: ieee80211_rx_napi\n");
-	printk(KERN_INFO "MC - rx.c: ieee80211_rx_napi\n");
+	printk(KERN_ALERT "MC - rx.c: %s %d \n", __FUNCTION__, __LINE__);
 
 	WARN_ON_ONCE(softirq_count() == 0);
 
@@ -3663,8 +3661,7 @@ void ieee80211_rx_irqsafe(struct ieee80211_hw *hw, struct sk_buff *skb)
 {
 	struct ieee80211_local *local = hw_to_local(hw);
 
-	printk(KERN_DEBUG "MC - rx.c: ieee80211_rx_irqsafe\n");
-	printk(KERN_INFO "MC - rx.c: ieee80211_rx_irqsafe\n");
+	printk(KERN_ALERT "MC - rx.c: %s %d \n", __FUNCTION__, __LINE__);
 
 	BUILD_BUG_ON(sizeof(struct ieee80211_rx_status) > sizeof(skb->cb));
 
