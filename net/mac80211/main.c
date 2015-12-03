@@ -487,7 +487,14 @@ struct ieee80211_hw *ieee80211_alloc_hw_nm(size_t priv_data_len,
 	struct wiphy *wiphy;
 	bool use_chanctx;
 
-	printk(KERN_ALERT "MC - main.c: %s %d \n", __FUNCTION__, __LINE__);
+	printk(KERN_ALERT "XXA - main.c: %s %d \n", __FUNCTION__, __LINE__);
+	printk(KERN_WARNING "XXB - main.c: %s %d \n", __FUNCTION__, __LINE__);
+	printk(KERN_INFO "XXC - main.c: %s %d \n", __FUNCTION__, __LINE__);
+	printk(KERN_DEBUG "XXD - main.c: %s %d \n", __FUNCTION__, __LINE__);
+	dev_printk(KERN_ALERT "XXE - main.c: %s %d \n", __FUNCTION__, __LINE__);
+	dev_printk(KERN_WARNING "XXF - main.c: %s %d \n", __FUNCTION__, __LINE__);
+	dev_printk(KERN_INFO "XXG - main.c: %s %d \n", __FUNCTION__, __LINE__);
+	dev_printk(KERN_DEBUG "XXH - main.c: %s %d \n", __FUNCTION__, __LINE__);
 
 	if (WARN_ON(!ops->tx || !ops->start || !ops->stop || !ops->config ||
 		    !ops->add_interface || !ops->remove_interface ||
