@@ -2301,14 +2301,10 @@ static int mac80211_hwsim_new_radio(struct genl_info *info,
 	const struct ieee80211_ops *ops = &mac80211_hwsim_ops;
 	int idx;
 
-	printk(KERN_ALERT "XXA - mac80211_hwsim.c: %s %d \n", __FUNCTION__, __LINE__);
-	printk(KERN_WARNING "XXB - mac80211_hwsim.c: %s %d \n", __FUNCTION__, __LINE__);
-	printk(KERN_INFO "XXC - mac80211_hwsim.c: %s %d \n", __FUNCTION__, __LINE__);
-	printk(KERN_DEBUG "XXD - mac80211_hwsim.c: %s %d \n", __FUNCTION__, __LINE__);
-	dev_printk(KERN_ALERT "XXE - mac80211_hwsim.c: %s %d \n", __FUNCTION__, __LINE__);
-	dev_printk(KERN_WARNING "XXF - mac80211_hwsim.c: %s %d \n", __FUNCTION__, __LINE__);
-	dev_printk(KERN_INFO "XXG - mac80211_hwsim.c: %s %d \n", __FUNCTION__, __LINE__);
-	dev_printk(KERN_DEBUG "XXH - mac80211_hwsim.c: %s %d \n", __FUNCTION__, __LINE__);
+	printk(KERN_ALERT "YYA - mac80211_hwsim.c: %s %d \n", __FUNCTION__, __LINE__);
+	printk(KERN_WARNING "YYB - mac80211_hwsim.c: %s %d \n", __FUNCTION__, __LINE__);
+	printk(KERN_INFO "YYC - mac80211_hwsim.c: %s %d \n", __FUNCTION__, __LINE__);
+	printk(KERN_DEBUG "YYD - mac80211_hwsim.c: %s %d \n", __FUNCTION__, __LINE__);
 
 	if (WARN_ON(param->channels > 1 && !param->use_chanctx))
 		return -EINVAL;
